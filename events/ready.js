@@ -1,4 +1,7 @@
 module.exports = (bot, ready) => {
-	bot.user.setActivity('OK!help for help | Coding!', {type: 'WATCHING'});
+	("OK!help", {
+        type: "STREAMING",
+        url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      });
 	console.log(`Logged in as ${bot.user.tag}!`);
 };
