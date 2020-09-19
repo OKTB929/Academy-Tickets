@@ -1,7 +1,7 @@
 module.exports = (bot, ready) => {
-	("OK!help", {
-        type: "STREAMING",
-        url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-      });
-	console.log(`Logged in as ${bot.user.tag}!`);
-};
+	console.log(`${bot.user.tag} is now online!`);
+	bot.user.setActivity("OK!help for help | Coding!", {
+		 type: "STREAMING",
+		 url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+	   });
+ };
