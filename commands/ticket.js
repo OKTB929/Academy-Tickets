@@ -3,7 +3,7 @@ const errors = require('../util/errors.js');
 const { color } = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
-    let ticketoptions = ["setup", "open", "close", "fc"];
+    let ticketoptions = ["open", "close", "fc"];
     if (!ticketoptions.includes(args[1])) return message.channel.send("Please provide a valid argument! ```setup, open, close or fc!```")
 
     if (args[1] == "setup") {
@@ -32,9 +32,9 @@ module.exports.run = async (bot, message, args) => {
         .setFooter("Please do OK!ticket close when you're finished!")
 
     if (args[1] == "open") {
-        let ticketcategory = message.guild.channels.cache.find(c => c.name == "Support" && c.type == "category")
+        let ticketcategory = message.guild.channels.cache.find(c => c.name == "➜ coaching" && c.type == "category")
 
-        if (message.channel.name !== "tickets") return;
+        if (message.channel.name !== "🎓┆request") return;
         message.delete()
         message.channel.send(embed1)
             .then(msg => {
