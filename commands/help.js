@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
 const { color, prefix } = require('../config.json');
+const { description, execute } = require("./embed");
 
-module.exports.run = async (bot, message, args) => {
+module.exports = {
+ name: 'help',
+ description: "Gives a description about all the commands",
+ execute(message, args) {
     let cmds = bot.commands;
     let allcommands = cmds.map(c => `${c.config.name}`)
 
@@ -35,11 +39,4 @@ module.exports.run = async (bot, message, args) => {
         }
     }
 }
-
-
-module.exports.config = {
-    name: "help",
-    aliases: ["commands"],
-    usage: "help | help <command>",
-    description: "Shows the help list!",
 }

@@ -2,7 +2,10 @@ const Discord = require("discord.js");
 const errors = require('../util/errors.js');
 const { color } = require('../config.json');
 
-module.exports.run = async (bot, message, args) => {
+module.exports = {
+    name: 'ticket',
+    description: "Opens a ticket for the coaching session!",
+    execute(message, args) {
     let ticketoptions = ["open", "close", "fc", "setup"];
     if (!ticketoptions.includes(args[1])) return message.channel.send("Please provide a valid argument! ```setup, open, close or fc!```")
 
@@ -71,12 +74,4 @@ module.exports.run = async (bot, message, args) => {
         if (!message.channel.name.startsWith('ticket-')) return;
         message.channel.delete()
     }
-}
-
-
-module.exports.config = {
-    name: "ticket",
-    aliases: [],
-    usage: "ticket <second arg>",
-    description: "Create or close a ticket!",
-}
+}}
