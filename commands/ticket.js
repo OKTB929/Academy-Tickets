@@ -3,7 +3,7 @@ const errors = require('../util/errors.js');
 const { color } = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
-    let ticketoptions = ["open", "close", "fc"];
+    let ticketoptions = ["open", "close", "fc", "setup"];
     if (!ticketoptions.includes(args[1])) return message.channel.send("Please provide a valid argument! ```setup, open, close or fc!```")
 
     if (args[1] == "setup") {
